@@ -6,7 +6,9 @@ const sequelize = require('./config/database');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://blog-frontend-eta-eight.vercel.app',
+}));
 app.use(bodyParser.json());
 app.use('/api', postRoutes);
 
