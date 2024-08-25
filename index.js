@@ -1,6 +1,6 @@
+import cors from 'cors';
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
 const postRoutes = require('./routes/posts');
 const sequelize = require('./config/database');
 require('dotenv').config();
