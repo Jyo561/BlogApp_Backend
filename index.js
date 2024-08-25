@@ -8,6 +8,8 @@ require('dotenv').config();
 const app = express();
 app.use(cors({
   origin: 'https://blog-frontend-eta-eight.vercel.app',
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true,
 }));
 app.use(bodyParser.json());
 app.use('/api', postRoutes);
