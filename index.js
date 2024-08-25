@@ -6,7 +6,15 @@ const sequelize = require('./config/database');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+const options = [
+  cors({
+    origin: '*',
+    methods: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  })
+];
+app.use(options);
 app.use(bodyParser.json());
 app.use('/api', postRoutes);
 
